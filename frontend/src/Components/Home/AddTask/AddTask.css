@@ -1,0 +1,70 @@
+.add-task-main-container{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    
+}
+
+.add-task-container{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    background-color: #fce5cd;
+    gap: 0.5rem;
+}
+.form-group input[type="text"], textarea, input[type="date"], .add-taskselect{
+    width: 100%;
+    padding:0.5rem 1rem;
+
+}
+.form-group label{
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+}
+
+.add-task-container h1{
+    text-align: center;
+    color: #351c75;
+    font-size: 1.5rem;
+}
+.button-status-container{
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+.cancel-button{
+    /* background: #f0f0f0; */
+    color: #555;
+     padding: 0.5rem 1rem;
+     border:2px solid #3a7bc8;
+     border-radius: 8px;
+}
+
+.cancel-button:hover{
+    color: #111;
+}
+
+.create-task{
+    background: #4a90e2;
+    padding: 0.5rem 1rem;
+    color: #f0f0f0;
+    border: none;
+    border-radius: 8px;
+}
+
+.create-task:hover{
+    background: #3a7bc8;
+}
