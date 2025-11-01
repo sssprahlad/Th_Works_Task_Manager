@@ -3,6 +3,7 @@ const cors = require("cors");
 const path = require("path");
 const port = process.env.PORT || 8080;
 const authenticationRouter = require("./routes/authenticationRouter");
+const taskRouter = require("./routes/taskRouter");
 require("dotenv").config();
 
 
@@ -20,6 +21,7 @@ app.use(cors({
 
 
 app.use("/api", authenticationRouter);
+app.use("/api", taskRouter);
 
 
 app.get("/",(req, res) => {
