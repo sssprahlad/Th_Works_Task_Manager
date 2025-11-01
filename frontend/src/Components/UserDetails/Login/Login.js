@@ -11,6 +11,7 @@ const Login = () => {
         password:""
     });
     const navigator = useNavigate();
+    const [errorMessage, setErrorMessage] = useState("");
 
     const handleInputChange =(e) => {
         const {name,value} = e.target;
@@ -31,15 +32,19 @@ const Login = () => {
                 },
                 body:JSON.stringify(userDetais)
             });
+             const data = await response.json();
             if(response.status === 200){
                 //console.log(await response.json());
-                const data = await response.json();
+               
                 localStorage.setItem("token",data.token);
                 navigator("/");
-
+                setErrorMessage(data.message);
+            }else{
+                setErrorMessage(data.message || "Login failed. Plz try again");
             }
         }catch(error){
-            console.log(error)
+            console.log(error)  
+            // setErrorMessage(response.message);
         }
 
 
@@ -47,7 +52,7 @@ const Login = () => {
 
 
 
-
+console.log(errorMessage,"error")
 
 
     return(
@@ -65,8 +70,9 @@ const Login = () => {
                     <label htmlFor="password">Password</label>
                     <input id="password" name = "password" placeholder="Enter your password" onChange={handleInputChange}/>
                 </div>
+                <p style={{color:"red",fontSize:"0.8rem"}}>{errorMessage}</p>
                 <button className="login-btn" type="submit">Login</button>
-                <p className="sing-up-text">Don't have an account? <span className="span">Sign up</span></p>
+                <p className="sing-up-text">Don't have an account? <span onClick={() => navigator("/register")} className="span">Sign up</span></p>
 
             </form>
 

@@ -1,8 +1,9 @@
 
-import "./Login.css";
+// import "./Login.css";
 import { REGISTER_API  } from "../../../constants/Constant";
 import { useEffect,useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 
 const Register = () => {
 
@@ -12,6 +13,7 @@ const Register = () => {
         username:""
     });
     const navigator = useNavigate();
+    const [errorMessage, setErrorMessage] = useState("");
 
     const handleInputChange =(e) => {
         const {name,value} = e.target;
@@ -32,12 +34,15 @@ const Register = () => {
                 },
                 body:JSON.stringify(userDetais)
             });
+             const data = await response.json();
             if(response.status === 200){
                 //console.log(await response.json());
-                const data = await response.json();
+               setErrorMessage(data.message);
                 //localStorage.setItem("token",data.token);
                 navigator("/");
 
+            }else{
+                setErrorMessage(data?.message);
             }
         }catch(error){
             console.log(error)
@@ -73,10 +78,10 @@ const Register = () => {
                     <label htmlFor="password">Password</label>
                     <input id="password" name = "password" placeholder="Enter your password" onChange={handleInputChange}/>
                 </div>
-
+               <p style={{color:"red", fontSize:"0.8rem"}}>{errorMessage}</p>
                
                 <button className="login-btn" type="submit">Login</button>
-                <p className="sing-up-text">Don't have an account? <span className="span">Sign up</span></p>
+                <p className="sing-up-text">Already have an account? <span onClick={() => navigator("/login")} span className="span">Sign in</span></p>
 
             </form>
 

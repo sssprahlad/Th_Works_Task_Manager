@@ -1,6 +1,6 @@
 
 
-export const API = "http://localhost:8080/";
+export const API = "https://th-works-task-manager.onrender.com/" || "http://localhost:8080/";
 
 
 //User Api's Details

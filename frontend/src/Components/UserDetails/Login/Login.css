@@ -39,6 +39,7 @@
     border: none;
     outline: none;
     border-radius: 8px;
+    cursor: pointer;
 }
 .message-sub-title{
     font-size: 0.9rem;
@@ -46,9 +47,9 @@
     padding: 10px 0px;
 }
 .sing-up-text{
-    font-size: 1rem;
-    
+    font-size: 1rem;  
 }
 .span{
     color: #4a90e2 !important;
+    cursor: pointer;
 }

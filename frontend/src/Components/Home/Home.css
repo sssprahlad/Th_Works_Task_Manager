@@ -35,6 +35,7 @@
     background: transparent;
     color: #e69138;
     width: 200px;
+    cursor: pointer;
 }
 .filter-alignment select option{
     color: black;
@@ -51,6 +52,7 @@
     background: #4a90e2;
     padding: 0.5rem 1.5rem;
     border: none !important;
+    cursor: pointer;
 }
 .task-table-container{
     border-radius: 8px;
