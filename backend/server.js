@@ -15,7 +15,8 @@ app.use(express.json());
 app.use(cors({
     origin: "https://th-works-task-manager.vercel.app/" || "http://localhost:3000",
     credentials:true,
-    allowedHeaders: ['Content-Type', 'Authorization']
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    method:["GET","POST","PATCH","DELETE"]
 
 }));
 
