@@ -106,6 +106,7 @@ console.log(filter,"filter")
                     fetchTasks();
                 },1000);
             }
+            setEditingId(null);
         }catch(error){
             console.error(error);
             console.log(error);

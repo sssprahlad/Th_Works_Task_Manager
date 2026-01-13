@@ -1,7 +1,5 @@
-
-
-export const API = "https://th-works-task-manager.onrender.com/" || "http://localhost:8080/";
-
+export const API =
+  "https://th-works-task-manager.onrender.com/" || "http://localhost:8080/";
 
 //User Api's Details
 export const LOGIN_API = `${API}api/login`;
@@ -16,5 +14,3 @@ export const GET_TASK = `${API}api/add-task`;
 export const DELETE_TASK = `${API}api/add-task`;
 
 export const PATCH_TASK = `${API}api/add-task`;
-
-
